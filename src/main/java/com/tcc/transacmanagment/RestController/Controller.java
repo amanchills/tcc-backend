@@ -53,4 +53,17 @@ public class Controller {
         return menuRepo.save(menu);
     }
 
+    @PostMapping ("/addReq")
+    ReqList addReq(@RequestBody ReqList reqList){
+        return reqDao.save(reqList);
+    }
+
+    @GetMapping ("getSale")
+    List<SaleRecord> getSale(){
+        return saleDao.findAll();
+    }
+    @GetMapping ("getPurchase")
+    List<PurchaseRecord> getPurchase(){
+        return purchaseRepo.findAll();
+    }
 }
